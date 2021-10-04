@@ -2,13 +2,13 @@
   "main": {
     "name": "Alejandro De Jesus",
     "occupation": "Mobile & Blockchain developer",
-    "description": "As a mobile developer I have gained a lot of experience through several projects. I have accomplished a wide range of frontend and backend programming languages and frameworks.",
+    "description": "As a mobile developer, I have gained a lot of experience through several projects. I have accomplished a wide range of frontend and backend programming languages and frameworks.",
     "image": "profilepic.jpg",
     "image2": "profilepic2.jpg",
-    "bio": "I specialize in React Native, iOS, JavaScript, Swift, Xcode, firebase, fastlane, unit testing, solidity, TDD, redux, fastlane, jest and API Gateway. I’ve been working on modern Javascript frameworks and libraries like Redux, React Native. I implement industry best practices for search engine, optimization, performance, accessibility, and testing. I always like to write clean code that will be easy for future developers to work on. I am constantly learning and evolving as a programmer. The technologies that I am learning are solidity, smart contracts and typescript, I enjoy working and learning with teammates.",
-    "contactmessage": "Here is where you should write your message to readers to have them get in contact with you.",
-    "email": "youremailhere@gmail.com",
-    "phone": "555-555-5555",
+    "bio": "I specialize in React Native, iOS, JavaScript, Swift, Xcode, firebase, Fastlane, unit testing, solidity, TDD, redux, Fastlane, jest, and API Gateway. I’ve been working on modern Javascript frameworks and libraries like Redux, React Native. I implement industry best practices for search engine, optimization, performance, accessibility, and testing. I always like to write clean code that will be easy for future developers to work on. I am constantly learning and evolving as a programmer. The technologies that I am learning are solidity, smart contracts, and typescript, I enjoy working and learning with teammates.",
+    "contactmessage": "",
+    "email": "alejandroz.dejesus@gmail.com",
+    "phone": "+549 1123980050",
     "address": {
       "city": "Argentina",
       "state": "Buenos Aires",
@@ -55,19 +55,19 @@
       {
         "company": "Endava",
         "title": "react native & iOS developer",
-        "years": "december 2021 - present",
+        "years": "December 2021 - present",
         "description": ""
       },
       {
         "company": "Kin and Carta",
         "title": "react native & iOS developer",
-        "years": "december 2020 - August 2021",
+        "years": "December 2020 - August 2021",
         "description": ""
       },
       {
         "company": "Flux IT",
         "title": "iOS developer",
-        "years": "March 2020 - december 2020",
+        "years": "March 2020 - December 2020",
         "description": ""
       },
       {
@@ -79,92 +79,63 @@
       {
         "company": "SGA Digital Solutions",
         "title": "junior iOS Developer",
-        "years": "March 2018 - december 2018",
+        "years": "March 2018 - December 2018",
         "description": ""
       }
     ],
     "skills": [
       {
-        "name": "JavaScript"
-      },
-      {
         "name": "iOS"
       },
       {
-        "name": "React.JS"
+        "name": "React native"
       },
       {
-        "name": "Jest"
+        "name": "Firebase"
       },
       {
-        "name": "Smart Contracts"
+        "name": "Xcode"
       },
       {
-        "name": "React Native"
+        "name": "SwiftUI"
       },
       {
-        "name": "web3.js"
-      },
-      {
-        "name": "Blockchain"
-      },
-      {
-        "name": "Swift"
-      },
-      {
-        "name": "SOLID"
-      },
-      {
-        "name": "OOP"
-      },
-      {
-        "name": "Solidity"
+        "name": "React.js"
       },
       {
         "name": "Redux"
       },
       {
-        "name": "Unit Test"
+        "name": "Webpack"
       },
       {
-        "name": "swiftui"
+        "name": "HTML5"
       },
       {
-        "name": "UIkit"
+        "name": "CSS"
+      },
+      {
+        "name": "Truffle"
+      },
+      {
+        "name": "Web3.js"
+      },
+      {
+        "name": "DeFi and NFT"
+      },
+      {
+        "name": "Cryptography"
       }
-    ]
-  },
-  "portfolio": {
-    "projects": [
+    ],
+    "skillsTitles": [
       {
-        "title": "Canadian Wanderlust",
-        "category": "My Travel Blog for my post-university travels",
-        "image": "canadian-wanderlust.jpg",
-        "url": "https://www.canadianwanderlust.com"
+        "name": "Mobile"
       },
       {
-        "title": "Fury Fighting Gear",
-        "category": "(offline now) A fighting gear company I started",
-        "image": "fury-fighting-gear.jpg",
-        "url": "http://www.timbakerdev.com"
+        "name": "Frontend"
       },
       {
-        "title": "Original Thai Food",
-        "category": "Website I built for a restaurant I like in Thailand",
-        "image": "original-thai-food.jpg",
-        "url": "http://www.timbakerdev.com/originalthaifood.github.io"
-      },
-      {
-        "title": "Resume Website",
-        "category": "A React based resume website template",
-        "image": "resume-website.jpg",
-        "url": "http://www.timbakerdev.com"
-      },
-      {
-        "title": "Smirkspace",
-        "category": "(MVP Only) A React and Meteor based chat University project.",
-        "image": "smirkspace.jpg",
-        "url": "http://www.smirkspace.com"
+        "name": "Blockchain"
       }
     ]
   },
