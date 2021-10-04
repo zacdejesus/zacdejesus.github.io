@@ -307,10 +307,32 @@ ul#nav li.current a { color: #F06000; }
 	font-weight: normal;
 }
 
+@media (min-width: 769px) 
+{
+   .vars li em {
+      font: 18px 'opensans-bold', sans-serif;
+      color: #313131;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: normal;
+   }
+}
+
+@media (max-width: 768px) 
+{
+   .vars li em {
+      font: 11px 'opensans-bold', sans-serif;
+      color: #313131;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: normal;
+   }
+}
+
 .vars ul {
    -webkit-column-count: 2;
    -moz-column-count: 2;
-   column-count: 2;
+   column-count: 3;
 }
 
 .bars {
