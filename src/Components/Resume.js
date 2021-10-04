@@ -92,7 +92,6 @@ class Resume extends Component {
               
               <br />
 
-              <ul>{skillsTitles}</ul>
               <ul>{skills}</ul>
             </div>
           </div>

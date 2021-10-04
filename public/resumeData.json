@@ -42,25 +42,25 @@
     "education": [
       {
         "school": "ISTEA",
-        "degree": "systems analyst",
+        "degree": "Systems Analyst",
         "graduated": "2019 - present"
       },
       {
         "school": "Universidad de Los Andes",
-        "degree": "electrical engineering",
+        "degree": "Electrical Engineering",
         "graduated": "2014 -2018"
       }
     ],
     "work": [
       {
         "company": "Endava",
-        "title": "react native & iOS developer",
+        "title": "React native & iOS developer",
         "years": "December 2021 - present",
         "description": ""
       },
       {
         "company": "Kin and Carta",
-        "title": "react native & iOS developer",
+        "title": "React native & iOS developer",
         "years": "December 2020 - August 2021",
         "description": ""
       },
@@ -85,6 +85,9 @@
     ],
     "skills": [
       {
+        "name": "Mobile"
+      },
+      {
         "name": "iOS"
       },
       {
@@ -100,6 +103,9 @@
         "name": "SwiftUI"
       },
       {
+        "name": "Frontend"
+      },
+      {
         "name": "React.js"
       },
       {
@@ -113,6 +119,9 @@
       },
       {
         "name": "CSS"
+      },
+      {
+        "name": "Blockchain"
       },
       {
         "name": "Truffle"
