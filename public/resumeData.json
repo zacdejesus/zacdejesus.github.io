@@ -151,12 +151,8 @@
   "testimonials": {
     "testimonials": [
       {
-        "text": "Here you should write some nice things that someone has said about you. No lies though, employers can tell when you are lying.",
-        "user": "Kareem Abdul Jabbar"
-      },
-      {
-        "text": "That Tim Baker must be one of the most brilliant developers I've ever met! It is amazing that nobody has hired him yet. Hey you, you should hire this guy, he may be fresh out of University and have zero on the job experience but I am confident that he will be one of your best developers in no time!",
-        "user": "Steve Wozniak... impersonator"
+        "text": "Ale en el entorno laboral es muy dedicada y siempre en busca de mejorar lo que se le presenta. Tuve la suerte de poder trabajar con él y ante cualquier tema que se le dio lo resolvió de muy buena forma. Con el paso del tiempo me di cuenta que le apasiona el trabajo de sistemas y siempre está en búsqueda de aprender nuevos temas. Doy fe de que lo que se le presente en el futuro lo resolverá con profesionalismo.",
+        "user": "Leonardo Donato - Integration Middleware & API Team Leader"
       }
     ]
   }
