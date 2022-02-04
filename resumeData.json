@@ -75,12 +75,6 @@
         "title": "Software developer",
         "years": "April 2019 - March 2020",
         "description": ""
-      },
-      {
-        "company": "SGA Digital Solutions",
-        "title": "junior iOS Developer",
-        "years": "March 2018 - December 2018",
-        "description": ""
       }
     ],
     "skills": [
@@ -151,7 +145,7 @@
   "testimonials": {
     "testimonials": [
       {
-        "text": "Ale en el entorno laboral es muy dedicada y siempre en busca de mejorar lo que se le presenta. Tuve la suerte de poder trabajar con él y ante cualquier tema que se le dio lo resolvió de muy buena forma. Con el paso del tiempo me di cuenta que le apasiona el trabajo de sistemas y siempre está en búsqueda de aprender nuevos temas. Doy fe de que lo que se le presente en el futuro lo resolverá con profesionalismo.",
+        "text": "Ale en el entorno laboral es muy dedicado y siempre en busca de mejorar lo que se le presenta. Tuve la suerte de poder trabajar con él y ante cualquier tema que se le dio lo resolvió de muy buena forma. Con el paso del tiempo me di cuenta que le apasiona el trabajo de sistemas y siempre está en búsqueda de aprender nuevos temas. Doy fe de que lo que se le presente en el futuro lo resolverá con profesionalismo.",
         "user": "Leonardo Donato - Integration Middleware & API Team Leader"
       }
     ]
