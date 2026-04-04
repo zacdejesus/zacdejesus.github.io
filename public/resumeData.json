@@ -1,159 +1,155 @@
 {
-  "main": {
-    "name": "Alejandro De Jesus",
-    "occupation": "Mobile & Blockchain developer",
-    "description": "As a mobile developer, I have gained a lot of experience through several projects. I have accomplished a wide range of frontend and backend programming languages and frameworks.",
-    "image": "profilepic.jpg",
-    "image2": "profilepic2.jpg",
-    "bio": "I specialize in React Native, iOS, JavaScript, Swift, Xcode, firebase, Fastlane, unit testing, solidity, TDD, redux, Fastlane, jest, and API Gateway. I’ve been working on modern Javascript frameworks and libraries like Redux, React Native. I implement industry best practices for search engine, optimization, performance, accessibility, and testing. I always like to write clean code that will be easy for future developers to work on. I am constantly learning and evolving as a programmer. The technologies that I am learning are solidity, smart contracts, and typescript, I enjoy working and learning with teammates.",
-    "contactmessage": "",
-    "email": "alejandroz.dejesus@gmail.com",
-    "phone": "+549 1123980050",
-    "address": {
-      "city": "Argentina",
-      "state": "Buenos Aires",
-      "zip": "1406"
+  "site": {
+    "title": "Alejandro Zadkiel De Jesus Ramirez | Senior iOS Engineer",
+    "tagline": "Senior iOS Engineer in Banking Technology & Enterprise Mobile",
+    "description": "Portfolio of Alejandro Zadkiel De Jesus Ramirez, Senior iOS Engineer with 5+ years building banking and enterprise mobile applications.",
+    "canonicalUrl": "https://zacdejesus.github.io/",
+    "socialImage": "/images/profilepic.jpg"
+  },
+  "hero": {
+    "name": "Alejandro Zadkiel De Jesus Ramirez",
+    "role": "Senior iOS Engineer · Banking Technology & Enterprise Mobile",
+    "location": "Buenos Aires, Argentina",
+    "summary": "Senior iOS Engineer with 5+ years building banking and enterprise mobile applications. Expert in Swift 6, SwiftUI, and Combine, architecting modular systems, modernizing legacy Objective-C codebases, and automating CI/CD pipelines to reduce deployment overhead by 90%. Currently seeking senior opportunities in Spain.",
+    "primaryCta": {
+      "label": "View Experience",
+      "href": "#experience"
     },
-    "social": [
+    "secondaryCta": {
+      "label": "Contact Me",
+      "href": "#contact"
+    },
+    "socialLinks": [
       {
-        "name": "twitter",
-        "url": "https://twitter.com/zacdejesus",
-        "className": "fa fa-twitter"
-      },
-      {
-        "name": "linkedin",
-        "url": "https://www.linkedin.com/in/zacdejesus",
-        "className": "fa fa-linkedin"
-      },
-      {
-        "name": "instagram",
-        "url": "https://www.instagram.com/zacdejesus",
-        "className": "fa fa-instagram"
-      },
-      {
-        "name": "github",
-        "url": "https://github.com/zacdejesus",
-        "className": "fa fa-github"
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/zacdejesus"
       }
     ]
   },
-  "resume": {
-    "skillmessage": "",
-    "education": [
-      {
-        "school": "ISTEA",
-        "degree": "Systems Analyst",
-        "graduated": "2019 - present"
-      },
-      {
-        "school": "Universidad de Los Andes",
-        "degree": "Electrical Engineering",
-        "graduated": "2014 -2018"
-      }
+  "about": {
+    "bio": "I deliver senior-level iOS engineering across FinTech and enterprise environments, with a proven track record in distributed Agile teams and global consultancies. My focus is scalable architecture, production reliability, and measurable delivery outcomes.",
+    "highlights": [
+      "Technical mentorship through code reviews, best-practice advocacy, and support for junior developers.",
+      "Strategic planning with accurate estimations, sprint planning, and delivery roadmap execution.",
+      "Fluent communication in English and Spanish with strong international stakeholder management."
     ],
-    "work": [
-      {
-        "company": "Endava",
-        "title": "React native & iOS developer",
-        "years": "December 2021 - present",
-        "description": ""
-      },
-      {
-        "company": "Kin and Carta",
-        "title": "React native & iOS developer",
-        "years": "December 2020 - August 2021",
-        "description": ""
-      },
-      {
-        "company": "Flux IT",
-        "title": "iOS developer",
-        "years": "March 2020 - December 2020",
-        "description": ""
-      },
-      {
-        "company": "CDT",
-        "title": "Software developer",
-        "years": "April 2019 - March 2020",
-        "description": ""
-      },
-      {
-        "company": "SGA Digital Solutions",
-        "title": "junior iOS Developer",
-        "years": "March 2018 - December 2018",
-        "description": ""
-      }
-    ],
-    "skills": [
-      {
-        "name": "Mobile"
-      },
-      {
-        "name": "iOS"
-      },
-      {
-        "name": "React native"
-      },
-      {
-        "name": "Firebase"
-      },
-      {
-        "name": "Xcode"
-      },
-      {
-        "name": "SwiftUI"
-      },
-      {
-        "name": "Frontend"
-      },
-      {
-        "name": "React.js"
-      },
-      {
-        "name": "Redux"
-      },
-      {
-        "name": "Webpack"
-      },
-      {
-        "name": "HTML5"
-      },
-      {
-        "name": "CSS"
-      },
-      {
-        "name": "Blockchain"
-      },
-      {
-        "name": "Truffle"
-      },
-      {
-        "name": "Web3.js"
-      },
-      {
-        "name": "DeFi and NFT"
-      },
-      {
-        "name": "Cryptography"
-      }
-    ],
-    "skillsTitles": [
-      {
-        "name": "Mobile"
-      },
-      {
-        "name": "Frontend"
-      },
-      {
-        "name": "Blockchain"
-      }
-    ]
+    "contact": {
+      "email": "alejandroz.dejesus@gmail.com",
+      "city": "Buenos Aires",
+      "country": "Argentina"
+    },
+    "images": {
+      "hero": "/images/profilepic.jpg",
+      "about": "/images/profilepic2.jpg"
+    }
   },
-  "testimonials": {
-    "testimonials": [
-      {
-        "text": "Ale en el entorno laboral es muy dedicada y siempre en busca de mejorar lo que se le presenta. Tuve la suerte de poder trabajar con él y ante cualquier tema que se le dio lo resolvió de muy buena forma. Con el paso del tiempo me di cuenta que le apasiona el trabajo de sistemas y siempre está en búsqueda de aprender nuevos temas. Doy fe de que lo que se le presente en el futuro lo resolverá con profesionalismo.",
-        "user": "Leonardo Donato - Integration Middleware & API Team Leader"
-      }
-    ]
-  }
+  "experience": [
+    {
+      "company": "Veritran",
+      "role": "Senior iOS Engineer",
+      "period": "Jan 2023 - Present",
+      "summary": "Led third-party SDK integrations in a low-code banking platform, bridging Objective-C and Swift with Factory and Builder patterns. Engineered Fastlane CI/CD pipelines automating builds, XCUITest suites, and App Store distribution, reducing manual deployment effort by 90%. Delivered Apple Wallet tokenization and NFC payment capabilities for a Puerto Rican bank."
+    },
+    {
+      "company": "Endava",
+      "role": "iOS & React Native Developer",
+      "period": "Dec 2021 - Dec 2022",
+      "summary": "Architected reusable Swift frameworks adopted across multiple client projects and managed dependency lifecycles through CocoaPods and SPM. Built React Native solutions with native iOS modules, including Firebase Analytics, Crashlytics, and real-time notification features."
+    },
+    {
+      "company": "Kin and Carta",
+      "role": "iOS Developer",
+      "period": "Dec 2020 - Nov 2021",
+      "summary": "Delivered product features within a distributed US-Argentina Agile team under strict TDD principles. Implemented UIAccessibility for VoiceOver compliance and shipped camera capture, BLE Bluetooth, and Core Location capabilities for a production logistics app."
+    },
+    {
+      "company": "Flux",
+      "role": "iOS Developer",
+      "period": "Mar 2020 - Dec 2020",
+      "summary": "Shipped features and resolved production issues in a Scrum environment, integrating Firebase Crashlytics and Authentication while delivering adaptive Auto Layout interfaces across all iPhone screen sizes."
+    }
+  ],
+  "education": [
+    {
+      "institution": "ISTEA, Buenos Aires",
+      "program": "Technical Systems Analysis",
+      "period": "Aug 2020 - Jun 2024"
+    },
+    {
+      "institution": "Tokio School / UCAM, Madrid",
+      "program": "Mobile App Development with Swift",
+      "period": "Jun 2021 - Jun 2022"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "items": [
+        "Swift 6 (Actors, Sendable, Strict Concurrency)",
+        "Objective-C",
+        "JavaScript"
+      ]
+    },
+    {
+      "category": "UI Frameworks",
+      "items": [
+        "SwiftUI",
+        "UIKit",
+        "Core Animation",
+        "Auto Layout",
+        "UIAccessibility"
+      ]
+    },
+    {
+      "category": "Architecture & Concurrency",
+      "items": [
+        "MVVM",
+        "VIPER",
+        "MVP",
+        "Clean Architecture",
+        "SOLID",
+        "Combine",
+        "Async/Await"
+      ]
+    },
+    {
+      "category": "Data & Networking",
+      "items": [
+        "Core Data",
+        "Realm",
+        "Alamofire",
+        "RESTful APIs",
+        "URLSession",
+        "SDK Integration"
+      ]
+    },
+    {
+      "category": "Specialized APIs",
+      "items": [
+        "Apple Wallet (Provisioning/Tokenization)",
+        "Core Location",
+        "Bluetooth (BLE)"
+      ]
+    },
+    {
+      "category": "Testing & Profiling",
+      "items": [
+        "XCTest",
+        "XCUITest (TDD/UI Testing)",
+        "Instruments (Memory & CPU Profiling)"
+      ]
+    },
+    {
+      "category": "Tools & DevOps",
+      "items": [
+        "Fastlane",
+        "Git",
+        "CocoaPods",
+        "SPM",
+        "Firebase",
+        "Figma",
+        "Jira"
+      ]
+    }
+  ]
 }
