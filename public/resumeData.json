@@ -4,7 +4,7 @@
     "tagline": "Senior iOS Engineer in Banking Technology & Enterprise Mobile",
     "description": "Portfolio of Alejandro Zadkiel De Jesus Ramirez, Senior iOS Engineer with 5+ years building banking and enterprise mobile applications.",
     "canonicalUrl": "https://zacdejesus.github.io/",
-    "socialImage": "/images/profilepic.jpg"
+    "socialImage": "/images/profile-bw-v2.jpg"
   },
   "hero": {
     "name": "Alejandro Zadkiel De Jesus Ramirez",
@@ -39,8 +39,8 @@
       "country": "Argentina"
     },
     "images": {
-      "hero": "/images/profilepic.jpg",
-      "about": "/images/profilepic2.jpg"
+      "hero": "/images/profile-bw-v2.jpg",
+      "about": "/images/profile-bw-about-v2.jpg"
     }
   },
   "experience": [
