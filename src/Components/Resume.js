@@ -88,7 +88,7 @@ class Resume extends Component {
 
               <h1>Programming</h1>
 
-              <h1>Javascript, Swift, Node.Js, Solidity </h1>
+              <h1>Javascript, Swift, Node.Js </h1>
               
               <br />
 

@@ -1,12 +1,23 @@
 import { useEffect, useMemo, useState } from 'react';
 
-const NAV_ITEMS = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'education', label: 'Education' },
-  { id: 'skills', label: 'Skills' }
-];
+const NAV_IDS = ['home', 'about', 'projects', 'experience', 'education', 'skills', 'contact'];
+
+function getInitialLang() {
+  try {
+    const saved = window.localStorage.getItem('lang');
+    if (saved === 'en' || saved === 'es') {
+      return saved;
+    }
+  } catch (error) {
+    // localStorage can be unavailable; fall back to the browser language.
+  }
+  return (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+}
+
+const LOADING_TEXT = {
+  en: { loading: 'Loading portfolio content...', error: 'Content could not be loaded. Please try again.' },
+  es: { loading: 'Cargando el portafolio...', error: 'No se pudo cargar el contenido. Inténtalo de nuevo.' }
+};
 
 function updateMetaTag(attr, key, value) {
   if (!value) {
@@ -29,11 +40,21 @@ function App() {
   const [data, setData] = useState(null);
   const [status, setStatus] = useState('loading');
   const [activeSection, setActiveSection] = useState('home');
+  const [lang, setLang] = useState(getInitialLang);
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    try {
+      window.localStorage.setItem('lang', lang);
+    } catch (error) {
+      // Ignore storage errors.
+    }
+  }, [lang]);
 
   useEffect(() => {
     async function getData() {
       try {
-        const response = await fetch('./resumeData.json', { cache: 'no-store' });
+        const response = await fetch(`./resumeData.${lang}.json`, { cache: 'no-store' });
         if (!response.ok) {
           throw new Error(`Failed to load content (${response.status})`);
         }
@@ -47,7 +68,7 @@ function App() {
     }
 
     getData();
-  }, []);
+  }, [lang]);
 
   useEffect(() => {
     if (!data?.site) {
@@ -84,11 +105,11 @@ function App() {
       return undefined;
     }
 
-    const sections = NAV_ITEMS.map((item) => document.getElementById(item.id)).filter(Boolean);
+    const sections = NAV_IDS.map((id) => document.getElementById(id)).filter(Boolean);
 
     const updateActiveSection = () => {
       const offset = window.innerHeight * 0.3;
-      let current = NAV_ITEMS[0].id;
+      let current = NAV_IDS[0];
 
       sections.forEach((section) => {
         const top = section.getBoundingClientRect().top;
@@ -108,14 +129,14 @@ function App() {
       window.removeEventListener('scroll', updateActiveSection);
       window.removeEventListener('resize', updateActiveSection);
     };
-  }, [status]);
+  }, [status, lang]);
 
   const year = useMemo(() => new Date().getFullYear(), []);
 
   if (status === 'loading') {
     return (
       <main className="state-view" aria-live="polite">
-        <p>Loading portfolio content...</p>
+        <p>{LOADING_TEXT[lang].loading}</p>
       </main>
     );
   }
@@ -123,45 +144,50 @@ function App() {
   if (status === 'error' || !data) {
     return (
       <main className="state-view" aria-live="assertive">
-        <p>Content could not be loaded. Please try again.</p>
+        <p>{LOADING_TEXT[lang].error}</p>
       </main>
     );
   }
 
-  const { hero, about, experience, education, skills, site } = data;
-  const heroStats = [
-    { value: '5+ Years', label: 'Banking & Enterprise Mobile' },
-    { value: 'Swift 6', label: 'Concurrency, SwiftUI, Combine' },
-    { value: '90%', label: 'Deployment overhead reduced' }
-  ];
+  const { hero, about, projects, experience, education, skills, site, ui } = data;
+  const heroStats = hero.stats;
 
   return (
     <>
       <a className="skip-link" href="#home">
-        Skip to content
+        {ui.skip}
       </a>
 
       <header className="site-header" aria-label="Primary">
         <div className="container nav-shell">
-          <a className="logo" href="#home" aria-label="Go to home section">
+          <a className="logo" href="#home" aria-label={ui.nav.home}>
             ADJ
           </a>
 
           <nav>
             <ul className="nav-list">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.id}>
+              {NAV_IDS.map((id) => (
+                <li key={id}>
                   <a
-                    className={activeSection === item.id ? 'active' : ''}
-                    href={`#${item.id}`}
-                    aria-current={activeSection === item.id ? 'page' : undefined}
+                    className={activeSection === id ? 'active' : ''}
+                    href={`#${id}`}
+                    aria-current={activeSection === id ? 'page' : undefined}
                   >
-                    {item.label}
+                    {ui.nav[id]}
                   </a>
                 </li>
               ))}
             </ul>
           </nav>
+
+          <button
+            type="button"
+            className="lang-toggle"
+            onClick={() => setLang(lang === 'en' ? 'es' : 'en')}
+            aria-label={ui.switchLabel}
+          >
+            {ui.switchTo}
+          </button>
         </div>
       </header>
 
@@ -171,7 +197,7 @@ function App() {
             <div className="hero-stage">
               <div className="hero-pill-row">
                 <p className="eyebrow">{site.tagline}</p>
-                <span className="hero-pill">Open to senior roles in Spain</span>
+                <span className="hero-pill">{hero.pill}</span>
               </div>
               <h1 className="hero-title">{hero.name}</h1>
               <p className="hero-role">{hero.role}</p>
@@ -185,7 +211,7 @@ function App() {
                   {hero.secondaryCta.label}
                 </a>
               </div>
-              <ul className="social-list" aria-label="Social links">
+              <ul className="social-list" aria-label={ui.socialLabel}>
                 {hero.socialLinks.map((link) => (
                   <li key={link.name}>
                     <a href={link.url} target="_blank" rel="noreferrer">
@@ -195,7 +221,7 @@ function App() {
                 ))}
               </ul>
 
-              <div className="hero-stats" aria-label="Career highlights">
+              <div className="hero-stats" aria-label={ui.heroStatsLabel}>
                 {heroStats.map((item) => (
                   <article key={item.value} className="hero-stat-card">
                     <p className="hero-stat-value">{item.value}</p>
@@ -210,8 +236,8 @@ function App() {
         <section id="about" className="section">
           <div className="container split">
             <div>
-              <p className="section-kicker">About</p>
-              <h2>Building thoughtful software with product impact.</h2>
+              <p className="section-kicker">{ui.aboutKicker}</p>
+              <h2>{ui.aboutTitle}</h2>
               <p>{about.bio}</p>
               <ul className="highlight-list">
                 {about.highlights.map((item) => (
@@ -220,23 +246,23 @@ function App() {
               </ul>
             </div>
 
-            <aside className="about-card" aria-label="Contact details">
+            <aside className="about-card" aria-label={ui.contactLabel}>
               <img
                 src={about.images.about}
-                alt={`${hero.name} working profile`}
+                alt={`${hero.name} ${ui.imageAlt}`}
                 width="380"
                 height="380"
                 loading="lazy"
               />
               <dl>
                 <div>
-                  <dt>Email</dt>
+                  <dt>{ui.email}</dt>
                   <dd>
                     <a href={`mailto:${about.contact.email}`}>{about.contact.email}</a>
                   </dd>
                 </div>
                 <div>
-                  <dt>Location</dt>
+                  <dt>{ui.location}</dt>
                   <dd>
                     {about.contact.city}, {about.contact.country}
                   </dd>
@@ -246,10 +272,54 @@ function App() {
           </div>
         </section>
 
+        <section id="projects" className="section">
+          <div className="container">
+            <p className="section-kicker">{ui.projectsKicker}</p>
+            <h2>{ui.projectsTitle}</h2>
+            <p className="section-intro">{ui.projectsIntro}</p>
+            <div className="project-grid">
+              {projects.map((project) => (
+                <article key={project.name} className="panel project-card">
+                  <img
+                    src={project.image}
+                    alt={`${ui.screenshotOf} ${project.name}`}
+                    width="1280"
+                    height="800"
+                    loading="lazy"
+                  />
+                  <div className="project-body">
+                    <p className="panel-meta">{project.kind}</p>
+                    <h3>{project.name}</h3>
+                    <p>{project.description}</p>
+                    <ul className="chip-list project-tags">
+                      {project.tags.map((tag) => (
+                        <li key={tag}>{tag}</li>
+                      ))}
+                    </ul>
+                    <div className="project-links">
+                      {project.links.map((link, index) => (
+                        <a
+                          key={link.url}
+                          className={`btn ${index === 0 ? 'primary' : 'secondary'}`}
+                          href={link.url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="experience" className="section">
           <div className="container">
-            <p className="section-kicker">Experience</p>
-            <h2>Professional Journey</h2>
+            <p className="section-kicker">{ui.experienceKicker}</p>
+            <h2>{ui.experienceTitle}</h2>
             <div className="card-grid">
               {experience.map((job) => (
                 <article key={`${job.company}-${job.period}`} className="panel">
@@ -265,8 +335,8 @@ function App() {
 
         <section id="education" className="section">
           <div className="container">
-            <p className="section-kicker">Education</p>
-            <h2>Academic Background</h2>
+            <p className="section-kicker">{ui.educationKicker}</p>
+            <h2>{ui.educationTitle}</h2>
             <div className="card-grid">
               {education.map((item) => (
                 <article key={`${item.institution}-${item.period}`} className="panel">
@@ -281,8 +351,8 @@ function App() {
 
         <section id="skills" className="section">
           <div className="container">
-            <p className="section-kicker">Skills</p>
-            <h2>Tools & Technologies</h2>
+            <p className="section-kicker">{ui.skillsKicker}</p>
+            <h2>{ui.skillsTitle}</h2>
             <div className="skills-grid">
               {skills.map((group) => (
                 <article key={group.category} className="panel skill-panel">
@@ -298,13 +368,51 @@ function App() {
           </div>
         </section>
 
+        <section id="contact" className="section">
+          <div className="container">
+            <p className="section-kicker">{ui.contactKicker}</p>
+            <h2>{ui.contactTitle}</h2>
+            <p className="section-intro">{ui.contactIntro}</p>
+            <div className="panel contact-panel">
+              <dl>
+                <div>
+                  <dt>{ui.email}</dt>
+                  <dd>
+                    <a href={`mailto:${about.contact.email}`}>{about.contact.email}</a>
+                  </dd>
+                </div>
+                <div>
+                  <dt>{ui.phone}</dt>
+                  <dd>
+                    <a href={`tel:${about.contact.phone.replace(/\s/g, '')}`}>{about.contact.phone}</a>
+                  </dd>
+                </div>
+                <div>
+                  <dt>{ui.location}</dt>
+                  <dd>
+                    {about.contact.city}, {about.contact.country}
+                  </dd>
+                </div>
+              </dl>
+              <div className="project-links">
+                <a className="btn primary" href={about.contact.whatsapp} target="_blank" rel="noreferrer">
+                  {ui.whatsapp}
+                </a>
+                <a className="btn secondary" href={`mailto:${about.contact.email}`}>
+                  {ui.sendEmail}
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       <footer className="site-footer">
         <div className="container footer-grid">
           <p>{hero.name}</p>
           <p>{hero.role}</p>
-          <p>© {year} All rights reserved.</p>
+          <p>© {year} {ui.rights}</p>
         </div>
       </footer>
     </>

@@ -1,0 +1,300 @@
+{
+  "lang": "en",
+  "ui": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "contact": "Contact"
+    },
+    "skip": "Skip to content",
+    "switchTo": "ES",
+    "switchLabel": "Cambiar a español",
+    "aboutKicker": "About",
+    "aboutTitle": "Building thoughtful software with product impact.",
+    "projectsKicker": "Projects",
+    "projectsTitle": "Selected work",
+    "projectsIntro": "Websites and stores for real businesses, plus my own mobile product.",
+    "experienceKicker": "Experience",
+    "experienceTitle": "Professional Journey",
+    "educationKicker": "Education",
+    "educationTitle": "Academic Background",
+    "skillsKicker": "Skills",
+    "skillsTitle": "Tools & Technologies",
+    "contactKicker": "Contact",
+    "contactTitle": "Let's work together",
+    "contactIntro": "Need a website, an online store or a mobile app? Tell me what you need and I will reply with a clear proposal.",
+    "email": "Email",
+    "phone": "Phone / WhatsApp",
+    "location": "Location",
+    "whatsapp": "Message on WhatsApp",
+    "sendEmail": "Send an email",
+    "rights": "All rights reserved.",
+    "imageAlt": "working profile",
+    "screenshotOf": "Screenshot of",
+    "heroStatsLabel": "Career highlights",
+    "socialLabel": "Social links",
+    "contactLabel": "Contact details"
+  },
+  "site": {
+    "title": "Alejandro Zadkiel De Jesus Ramirez | Mobile & Web Engineer",
+    "tagline": "Mobile & Web Engineer · iOS, Android, Next.js and applied AI",
+    "description": "Portfolio of Alejandro Zadkiel De Jesus Ramirez, a mobile and web engineer with 5+ years building banking iOS apps, online stores and business websites, plus applied AI.",
+    "canonicalUrl": "https://zacdejesus.github.io/",
+    "socialImage": "/images/profile-bw-v2.jpg"
+  },
+  "hero": {
+    "name": "Alejandro Zadkiel De Jesus Ramirez",
+    "role": "Mobile & Web Engineer · AI",
+    "pill": "Available for freelance projects and new opportunities",
+    "location": "Granada, Spain",
+    "summary": "Engineer with 5+ years building banking and enterprise iOS apps, and websites and online stores for small businesses. I work with Swift 6, SwiftUI, React Native, Kotlin and Next.js, and I use AI every day: Claude Code in my workflow and on-device models in my own app.",
+    "primaryCta": {
+      "label": "View Projects",
+      "href": "#projects"
+    },
+    "secondaryCta": {
+      "label": "Contact Me",
+      "href": "#contact"
+    },
+    "socialLinks": [
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/zacdejesus"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/zacdejesus"
+      }
+    ],
+    "stats": [
+      {
+        "value": "5+ Years",
+        "label": "Banking & enterprise mobile"
+      },
+      {
+        "value": "3 live products",
+        "label": "App Store app, online store, business site"
+      },
+      {
+        "value": "90%",
+        "label": "Deployment overhead reduced"
+      }
+    ]
+  },
+  "about": {
+    "bio": "I build mobile apps and websites end to end: design, code, data and launch. My background is senior iOS engineering in FinTech and global consultancies, and I now also deliver web projects for small businesses. My focus is clear scope, reliable delivery and results the client can measure.",
+    "highlights": [
+      "Own projects from design to production: I designed and built Frabazar's online store and the Andes Workwear website on my own.",
+      "AI in daily work: Claude Code skills and agents with human review of every change, and on-device AI with Apple Foundation Models in MuscleCheck.",
+      "Technical mentorship through code reviews, best-practice advocacy, and support for junior developers.",
+      "Communication in Spanish (native) and English (B2), used with international teams and clients."
+    ],
+    "contact": {
+      "email": "alejandroz.dejesus@gmail.com",
+      "phone": "+34 662 357 543",
+      "whatsapp": "https://wa.me/34662357543",
+      "city": "Granada",
+      "country": "Spain"
+    },
+    "images": {
+      "hero": "/images/profile-bw-v2.jpg",
+      "about": "/images/profile-bw-about-v2.jpg"
+    }
+  },
+  "projects": [
+    {
+      "name": "Frabazar",
+      "kind": "Online store · Client project",
+      "image": "/images/projects/frabazar.jpg",
+      "description": "Online store for a home-goods shop in Buenos Aires. I designed and built it on my own: product catalog with categories, product pages, a cart that sends the order by WhatsApp, and shipping and contact pages. Products are managed in Airtable. It is live and already selling: customers browse on their phone, fill the cart and send the order in one tap.",
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Airtable",
+        "Vercel"
+      ],
+      "links": [
+        {
+          "label": "Visit site",
+          "url": "https://frabazar.vercel.app/"
+        }
+      ]
+    },
+    {
+      "name": "Andes Workwear",
+      "kind": "Business website · Client in Canada",
+      "image": "/images/projects/andes.jpg",
+      "description": "Website for a workwear and uniforms company in Canada. I built the whole site: Home, Products and Contact pages, a clear \"Get a quote\" call to action, and contact through email, phone and WhatsApp.",
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "links": [
+        {
+          "label": "Visit site",
+          "url": "https://www.andesworkwear.ca/"
+        }
+      ]
+    },
+    {
+      "name": "MuscleCheck",
+      "kind": "Mobile app · Own product",
+      "image": "/images/projects/musclecheck.jpg",
+      "description": "Training tracker that I build and run on my own, native on both platforms: iOS in SwiftUI and SwiftData, and a full Android port in Kotlin and Jetpack Compose. It includes HealthKit, widgets, Siri shortcuts, RevenueCat subscriptions, on-device AI with Apple Foundation Models, and 4 languages.",
+      "tags": [
+        "Swift",
+        "SwiftUI",
+        "Kotlin",
+        "Jetpack Compose",
+        "RevenueCat",
+        "Foundation Models"
+      ],
+      "links": [
+        {
+          "label": "App Store",
+          "url": "https://apps.apple.com/es/app/musclecheck/id6748917084"
+        },
+        {
+          "label": "Website",
+          "url": "https://musclecheck.app/"
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Veritran",
+      "role": "Senior iOS Engineer",
+      "period": "Feb 2023 - Present",
+      "summary": "Delivered iOS solutions for banks and enterprise clients on a low-code platform. Built wrappers exposing third-party SDKs, bridging Objective-C and Swift. Engineered a Fastlane CI/CD pipeline for builds, XCUITest suites and App Store distribution, reducing manual deployment effort by 90%. Delivered Apple Wallet card tokenization and contactless NFC payments for a Puerto Rican bank. Automated development workflows with Claude Code skills and agents."
+    },
+    {
+      "company": "Endava",
+      "role": "iOS & React Native Developer",
+      "period": "Dec 2021 - Dec 2022",
+      "summary": "Architected reusable Swift frameworks adopted across multiple client projects and managed dependencies with CocoaPods and SPM. Built a React Native app with native iOS modules, including Firebase Analytics, Crashlytics and real-time notifications."
+    },
+    {
+      "company": "Kin + Carta (now Valtech)",
+      "role": "iOS Developer",
+      "period": "Dec 2020 - Aug 2021",
+      "summary": "Delivered features within a distributed Buenos Aires-Chicago Agile team using TDD. Implemented full VoiceOver accessibility and shipped camera capture, Bluetooth BLE and Core Location features for a production logistics app."
+    },
+    {
+      "company": "Flux",
+      "role": "iOS Developer",
+      "period": "Mar 2020 - Dec 2020",
+      "summary": "Shipped features and fixed production bugs in a Scrum team, integrating Firebase Crashlytics and Authentication. Ran A/B tests in a retail banking app and built adaptive Auto Layout interfaces for all iPhone sizes."
+    }
+  ],
+  "education": [
+    {
+      "institution": "FP Mercedarias, Granada",
+      "program": "Specialisation in Artificial Intelligence and Big Data",
+      "period": "Oct 2026 - Jun 2027 (in progress)"
+    },
+    {
+      "institution": "ISTEA, Buenos Aires",
+      "program": "Higher Technician in Multiplatform App Development (DAM), homologated in Spain",
+      "period": "Aug 2020 - Jun 2024"
+    },
+    {
+      "institution": "Tokio School / UCAM, Madrid",
+      "program": "Mobile App Development with Swift",
+      "period": "Jun 2021 - Jun 2022"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Mobile",
+      "items": [
+        "Swift 6 (Actors, Sendable, Strict Concurrency)",
+        "SwiftUI",
+        "UIKit",
+        "Kotlin",
+        "Jetpack Compose",
+        "React Native",
+        "Objective-C"
+      ]
+    },
+    {
+      "category": "Web",
+      "items": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "JavaScript",
+        "Tailwind CSS",
+        "Airtable",
+        "Vercel"
+      ]
+    },
+    {
+      "category": "AI",
+      "items": [
+        "Claude API (tool calling, agents)",
+        "Apple Foundation Models",
+        "LangChain",
+        "RAG",
+        "Python (FastAPI, Flask)",
+        "Claude Code"
+      ]
+    },
+    {
+      "category": "Architecture",
+      "items": [
+        "MVVM",
+        "VIPER",
+        "Clean Architecture",
+        "SOLID",
+        "Combine",
+        "Async/Await",
+        "Modular frameworks (SPM)"
+      ]
+    },
+    {
+      "category": "Data & Networking",
+      "items": [
+        "Core Data",
+        "SwiftData",
+        "Room",
+        "Realm",
+        "RESTful APIs",
+        "GraphQL",
+        "URLSession"
+      ]
+    },
+    {
+      "category": "Specialized APIs",
+      "items": [
+        "Apple Wallet (Tokenization)",
+        "HealthKit",
+        "WidgetKit",
+        "App Intents / Siri",
+        "Core Location",
+        "Bluetooth (BLE)"
+      ]
+    },
+    {
+      "category": "Testing & Delivery",
+      "items": [
+        "XCTest",
+        "XCUITest (TDD)",
+        "Instruments",
+        "Fastlane",
+        "GitHub Actions",
+        "Git",
+        "Firebase",
+        "RevenueCat"
+      ]
+    }
+  ]
+}
