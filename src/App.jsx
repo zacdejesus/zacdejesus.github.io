@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
-const NAV_IDS = ['home', 'about', 'projects', 'experience', 'education', 'skills', 'contact'];
+const SECTION_IDS = ['home', 'projects', 'services', 'about', 'experience', 'skills', 'contact'];
+const NAV_IDS = ['projects', 'services', 'about', 'experience', 'contact'];
 
 function getInitialLang() {
   try {
@@ -105,11 +106,11 @@ function App() {
       return undefined;
     }
 
-    const sections = NAV_IDS.map((id) => document.getElementById(id)).filter(Boolean);
+    const sections = SECTION_IDS.map((id) => document.getElementById(id)).filter(Boolean);
 
     const updateActiveSection = () => {
       const offset = window.innerHeight * 0.3;
-      let current = NAV_IDS[0];
+      let current = SECTION_IDS[0];
 
       sections.forEach((section) => {
         const top = section.getBoundingClientRect().top;
@@ -149,8 +150,8 @@ function App() {
     );
   }
 
-  const { hero, about, projects, experience, education, skills, site, ui } = data;
-  const heroStats = hero.stats;
+  const { hero, about, projects, services, experience, education, skills, ui } = data;
+  const currentNav = activeSection === 'skills' ? 'experience' : activeSection;
 
   return (
     <>
@@ -169,9 +170,9 @@ function App() {
               {NAV_IDS.map((id) => (
                 <li key={id}>
                   <a
-                    className={activeSection === id ? 'active' : ''}
+                    className={currentNav === id ? 'active' : ''}
                     href={`#${id}`}
-                    aria-current={activeSection === id ? 'page' : undefined}
+                    aria-current={currentNav === id ? 'page' : undefined}
                   >
                     {ui.nav[id]}
                   </a>
@@ -180,14 +181,19 @@ function App() {
             </ul>
           </nav>
 
-          <button
-            type="button"
-            className="lang-toggle"
-            onClick={() => setLang(lang === 'en' ? 'es' : 'en')}
-            aria-label={ui.switchLabel}
-          >
-            {ui.switchTo}
-          </button>
+          <div className="lang-switch" role="group" aria-label={ui.switchGroup}>
+            {['en', 'es'].map((code) => (
+              <button
+                key={code}
+                type="button"
+                className={lang === code ? 'active' : ''}
+                aria-pressed={lang === code}
+                onClick={() => setLang(code)}
+              >
+                {code.toUpperCase()}
+              </button>
+            ))}
+          </div>
         </div>
       </header>
 
@@ -195,80 +201,57 @@ function App() {
         <section id="home" className="hero section shell-hero">
           <div className="container hero-grid">
             <div className="hero-stage">
-              <div className="hero-pill-row">
-                <p className="eyebrow">{site.tagline}</p>
+              <div className="hero-copy">
                 <span className="hero-pill">{hero.pill}</span>
-              </div>
-              <h1 className="hero-title">{hero.name}</h1>
-              <p className="hero-role">{hero.role}</p>
-              <p className="hero-summary">{hero.summary}</p>
-              <p className="hero-location">{hero.location}</p>
-              <div className="hero-cta">
-                <a className="btn primary" href={hero.primaryCta.href}>
-                  {hero.primaryCta.label}
-                </a>
-                <a className="btn secondary" href={hero.secondaryCta.href}>
-                  {hero.secondaryCta.label}
-                </a>
-              </div>
-              <ul className="social-list" aria-label={ui.socialLabel}>
-                {hero.socialLinks.map((link) => (
-                  <li key={link.name}>
-                    <a href={link.url} target="_blank" rel="noreferrer">
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="hero-stats" aria-label={ui.heroStatsLabel}>
-                {heroStats.map((item) => (
-                  <article key={item.value} className="hero-stat-card">
-                    <p className="hero-stat-value">{item.value}</p>
-                    <p className="hero-stat-label">{item.label}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="about" className="section">
-          <div className="container split">
-            <div>
-              <p className="section-kicker">{ui.aboutKicker}</p>
-              <h2>{ui.aboutTitle}</h2>
-              <p>{about.bio}</p>
-              <ul className="highlight-list">
-                {about.highlights.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            <aside className="about-card" aria-label={ui.contactLabel}>
-              <img
-                src={about.images.about}
-                alt={`${hero.name} ${ui.imageAlt}`}
-                width="380"
-                height="380"
-                loading="lazy"
-              />
-              <dl>
-                <div>
-                  <dt>{ui.email}</dt>
-                  <dd>
-                    <a href={`mailto:${about.contact.email}`}>{about.contact.email}</a>
-                  </dd>
+                <h1 className="hero-title">{hero.name}</h1>
+                <p className="hero-role">{hero.role}</p>
+                <p className="hero-summary">{hero.summary}</p>
+                <div className="hero-cta">
+                  <a className="btn primary" href={hero.primaryCta.href}>
+                    {hero.primaryCta.label}
+                  </a>
+                  <a className="btn secondary" href={hero.secondaryCta.href}>
+                    {hero.secondaryCta.label}
+                  </a>
                 </div>
-                <div>
-                  <dt>{ui.location}</dt>
-                  <dd>
-                    {about.contact.city}, {about.contact.country}
-                  </dd>
+                <ul className="social-list" aria-label={ui.socialLabel}>
+                  <li className="social-place">{hero.location}</li>
+                  {hero.socialLinks.map((link) => (
+                    <li key={link.name}>
+                      <a href={link.url} target="_blank" rel="noreferrer">
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <a className="hero-mockup" href="#projects" aria-label={ui.mockupLabel}>
+                <div className="browser-frame">
+                  <div className="browser-bar">
+                    <span className="browser-dots" aria-hidden="true">
+                      <i />
+                      <i />
+                      <i />
+                    </span>
+                    <span className="browser-url">{hero.mockup.browserUrl}</span>
+                  </div>
+                  <img src={hero.mockup.browserImage} alt="" width="1280" height="800" />
                 </div>
+                <div className="phone-frame">
+                  <img src={hero.mockup.phoneImage} alt="" width="640" height="1390" />
+                </div>
+              </a>
+
+              <dl className="hero-stats" aria-label={ui.heroStatsLabel}>
+                {hero.stats.map((item) => (
+                  <div key={item.value} className="hero-stat">
+                    <dt className="hero-stat-value">{item.value}</dt>
+                    <dd className="hero-stat-label">{item.label}</dd>
+                  </div>
+                ))}
               </dl>
-            </aside>
+            </div>
           </div>
         </section>
 
@@ -316,36 +299,82 @@ function App() {
           </div>
         </section>
 
-        <section id="experience" className="section">
+        <section id="services" className="section">
           <div className="container">
-            <p className="section-kicker">{ui.experienceKicker}</p>
-            <h2>{ui.experienceTitle}</h2>
-            <div className="card-grid">
-              {experience.map((job) => (
-                <article key={`${job.company}-${job.period}`} className="panel">
-                  <p className="panel-meta">{job.period}</p>
-                  <h3>{job.role}</h3>
-                  <p className="panel-company">{job.company}</p>
-                  <p>{job.summary}</p>
+            <p className="section-kicker">{ui.servicesKicker}</p>
+            <h2>{ui.servicesTitle}</h2>
+            <div className="service-grid">
+              {services.map((service, index) => (
+                <article key={service.title} className="panel service-card">
+                  <p className="service-number">{String(index + 1).padStart(2, '0')}</p>
+                  <h3>{service.title}</h3>
+                  <p>{service.text}</p>
+                  <ul className="chip-list">
+                    {service.tags.map((tag) => (
+                      <li key={tag}>{tag}</li>
+                    ))}
+                  </ul>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="education" className="section">
-          <div className="container">
-            <p className="section-kicker">{ui.educationKicker}</p>
-            <h2>{ui.educationTitle}</h2>
-            <div className="card-grid">
-              {education.map((item) => (
-                <article key={`${item.institution}-${item.period}`} className="panel">
-                  <p className="panel-meta">{item.period}</p>
-                  <h3>{item.program}</h3>
-                  <p className="panel-company">{item.institution}</p>
-                </article>
-              ))}
+        <section id="about" className="section">
+          <div className="container split">
+            <div>
+              <p className="section-kicker">{ui.aboutKicker}</p>
+              <h2>{ui.aboutTitle}</h2>
+              <p>{about.bio}</p>
+              <ul className="highlight-list">
+                {about.highlights.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
+
+            <aside className="about-card" aria-label={ui.educationTitle2}>
+              <img
+                src={about.images.about}
+                alt={`${hero.name} ${ui.imageAlt}`}
+                width="380"
+                height="380"
+                loading="lazy"
+              />
+              <h3 className="about-card-title">{ui.educationTitle2}</h3>
+              <ul className="edu-list">
+                {education.map((item) => (
+                  <li key={item.program}>
+                    <strong>{item.program}</strong>
+                    <span>
+                      {item.institution} · {item.period}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </div>
+        </section>
+
+        <section id="experience" className="section">
+          <div className="container">
+            <p className="section-kicker">{ui.experienceKicker}</p>
+            <h2>{ui.experienceTitle}</h2>
+            <ol className="timeline">
+              {experience.map((job) => (
+                <li key={`${job.company}-${job.period}`} className="timeline-item">
+                  <p className="panel-meta">{job.period}</p>
+                  <h3>
+                    {job.role} <span className="timeline-company">· {job.company}</span>
+                  </h3>
+                  <ul className="timeline-bullets">
+                    {job.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 
@@ -369,10 +398,20 @@ function App() {
         </section>
 
         <section id="contact" className="section">
-          <div className="container">
-            <p className="section-kicker">{ui.contactKicker}</p>
-            <h2>{ui.contactTitle}</h2>
-            <p className="section-intro">{ui.contactIntro}</p>
+          <div className="container contact-layout">
+            <div>
+              <p className="section-kicker">{ui.contactKicker}</p>
+              <h2>{ui.contactTitle}</h2>
+              <p className="section-intro">{ui.contactIntro}</p>
+              <div className="project-links contact-actions-row">
+                <a className="btn primary" href={about.contact.whatsapp} target="_blank" rel="noreferrer">
+                  {ui.whatsapp}
+                </a>
+                <a className="btn secondary" href={`mailto:${about.contact.email}`}>
+                  {ui.sendEmail}
+                </a>
+              </div>
+            </div>
             <div className="panel contact-panel">
               <dl>
                 <div>
@@ -394,18 +433,9 @@ function App() {
                   </dd>
                 </div>
               </dl>
-              <div className="project-links">
-                <a className="btn primary" href={about.contact.whatsapp} target="_blank" rel="noreferrer">
-                  {ui.whatsapp}
-                </a>
-                <a className="btn secondary" href={`mailto:${about.contact.email}`}>
-                  {ui.sendEmail}
-                </a>
-              </div>
             </div>
           </div>
         </section>
-
       </main>
 
       <footer className="site-footer">

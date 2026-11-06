@@ -8,7 +8,8 @@
       "experience": "Experience",
       "education": "Education",
       "skills": "Skills",
-      "contact": "Contact"
+      "contact": "Contact",
+      "services": "Services"
     },
     "skip": "Skip to content",
     "switchTo": "ES",
@@ -37,21 +38,26 @@
     "screenshotOf": "Screenshot of",
     "heroStatsLabel": "Career highlights",
     "socialLabel": "Social links",
-    "contactLabel": "Contact details"
+    "contactLabel": "Contact details",
+    "servicesKicker": "Services",
+    "servicesTitle": "What I can build for you",
+    "educationTitle2": "Education",
+    "switchGroup": "Language",
+    "mockupLabel": "See my projects"
   },
   "site": {
-    "title": "Alejandro Zadkiel De Jesus Ramirez | Mobile & Web Engineer",
+    "title": "Alejandro De Jesus | Mobile & Web Engineer",
     "tagline": "Mobile & Web Engineer · iOS, Android, Next.js and applied AI",
     "description": "Portfolio of Alejandro Zadkiel De Jesus Ramirez, a mobile and web engineer with 5+ years building banking iOS apps, online stores and business websites, plus applied AI.",
     "canonicalUrl": "https://zacdejesus.github.io/",
     "socialImage": "/images/profile-bw-v2.jpg"
   },
   "hero": {
-    "name": "Alejandro Zadkiel De Jesus Ramirez",
+    "name": "Alejandro De Jesus",
     "role": "Mobile & Web Engineer · AI",
     "pill": "Available for freelance projects and new opportunities",
     "location": "Granada, Spain",
-    "summary": "Engineer with 5+ years building banking and enterprise iOS apps, and websites and online stores for small businesses. I work with Swift 6, SwiftUI, React Native, Kotlin and Next.js, and I use AI every day: Claude Code in my workflow and on-device models in my own app.",
+    "summary": "5+ years building banking and enterprise iOS apps, and websites and online stores for small businesses. Swift, React Native, Kotlin and Next.js, with AI in my daily workflow.",
     "primaryCta": {
       "label": "View Projects",
       "href": "#projects"
@@ -83,7 +89,12 @@
         "value": "90%",
         "label": "Deployment overhead reduced"
       }
-    ]
+    ],
+    "mockup": {
+      "browserImage": "/images/projects/frabazar.jpg",
+      "browserUrl": "frabazar.vercel.app",
+      "phoneImage": "/images/projects/musclecheck-app.jpg"
+    }
   },
   "about": {
     "bio": "I build mobile apps and websites end to end: design, code, data and launch. My background is senior iOS engineering in FinTech and global consultancies, and I now also deliver web projects for small businesses. My focus is clear scope, reliable delivery and results the client can measure.",
@@ -174,25 +185,39 @@
       "company": "Veritran",
       "role": "Senior iOS Engineer",
       "period": "Feb 2023 - Present",
-      "summary": "Delivered iOS solutions for banks and enterprise clients on a low-code platform. Built wrappers exposing third-party SDKs, bridging Objective-C and Swift. Engineered a Fastlane CI/CD pipeline for builds, XCUITest suites and App Store distribution, reducing manual deployment effort by 90%. Delivered Apple Wallet card tokenization and contactless NFC payments for a Puerto Rican bank. Automated development workflows with Claude Code skills and agents."
+      "bullets": [
+        "Delivered Apple Wallet card tokenization and contactless NFC payments for a Puerto Rican bank.",
+        "Built a Fastlane CI/CD pipeline for builds, XCUITest suites and App Store distribution, cutting manual deployment effort by 90%.",
+        "Built wrappers exposing third-party SDKs to a low-code platform, bridging Objective-C and Swift.",
+        "Automated development workflows with Claude Code skills and agents, with human review of every change."
+      ]
     },
     {
       "company": "Endava",
       "role": "iOS & React Native Developer",
       "period": "Dec 2021 - Dec 2022",
-      "summary": "Architected reusable Swift frameworks adopted across multiple client projects and managed dependencies with CocoaPods and SPM. Built a React Native app with native iOS modules, including Firebase Analytics, Crashlytics and real-time notifications."
+      "bullets": [
+        "Architected reusable Swift frameworks adopted across multiple client projects, managed with CocoaPods and SPM.",
+        "Built a React Native app with native iOS modules: Firebase Analytics, Crashlytics and real-time notifications."
+      ]
     },
     {
       "company": "Kin + Carta (now Valtech)",
       "role": "iOS Developer",
       "period": "Dec 2020 - Aug 2021",
-      "summary": "Delivered features within a distributed Buenos Aires-Chicago Agile team using TDD. Implemented full VoiceOver accessibility and shipped camera capture, Bluetooth BLE and Core Location features for a production logistics app."
+      "bullets": [
+        "Delivered features in a distributed Buenos Aires-Chicago Agile team using TDD, with full VoiceOver accessibility.",
+        "Shipped camera capture, Bluetooth BLE and Core Location features for a production logistics app."
+      ]
     },
     {
       "company": "Flux",
       "role": "iOS Developer",
       "period": "Mar 2020 - Dec 2020",
-      "summary": "Shipped features and fixed production bugs in a Scrum team, integrating Firebase Crashlytics and Authentication. Ran A/B tests in a retail banking app and built adaptive Auto Layout interfaces for all iPhone sizes."
+      "bullets": [
+        "Shipped features and fixed production bugs in a Scrum team, with Firebase Crashlytics and Authentication.",
+        "Ran A/B tests in a retail banking app and built adaptive Auto Layout interfaces for all iPhone sizes."
+      ]
     }
   ],
   "education": [
@@ -294,6 +319,38 @@
         "Git",
         "Firebase",
         "RevenueCat"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "title": "Websites & online stores",
+      "text": "Business websites and online stores with a clear call to action, product catalogs, carts and ordering by WhatsApp.",
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "title": "Mobile apps",
+      "text": "Native iOS and Android apps, from banking and enterprise projects to my own product on the App Store.",
+      "tags": [
+        "Swift",
+        "SwiftUI",
+        "Kotlin",
+        "React Native"
+      ]
+    },
+    {
+      "title": "Applied AI",
+      "text": "AI features inside apps and in daily work: LLM tool calling, on-device models with Apple Foundation Models, and AI-assisted development with human review.",
+      "tags": [
+        "Claude API",
+        "Foundation Models",
+        "RAG",
+        "Python"
       ]
     }
   ]
